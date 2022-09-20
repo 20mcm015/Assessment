@@ -45,7 +45,7 @@ public class Signup{
          @DataProvider(name = "datasets")
          public Object[][] datasets(){
              Object[][] data = {{"karthik","psk","karthik@gmail.com","karthik@123","1234567898","05/20/2022","qwertyuiopasdfghjkl"},
-                                {"sa","sa","sanchai@gmail","sa","dfghggffd","05/20/2000",""},
+                                {"sa","sa","karthik@gmail","sa","dfghggffd","05/20/2000",""},
                                 {"rasdfghjkihugytrsdfgh","raqwertyuiiiiiiiiiiopppppppppo","karthik@gmail","Raaghab243626@#$%&HRRt","karthik@gmail.com","05/22/2000","1234567"},
                                 {"karthik","psk","karthik@gmail.com","karthik@123","123445566666","05/20/2022","hai"},
                                 {"karthik","psk","@gmail.com","san@123","123445566666","05/20/2000","hai"},
