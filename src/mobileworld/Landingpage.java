@@ -112,7 +112,7 @@ public class Landingpage {
 	
 	public void goTo()
 	{
-		driver.get("https://mobileworld.banyanpro.com/");
+		driver.get("https://qualicoach.org/mwapp/index.html");
 	}
 	
 	public void scroll(){
@@ -205,8 +205,22 @@ public class Landingpage {
 		
 		
 		
-	} 
+	}
+	
+	 
+	 
+	 
+	 //testng.xml
+	 
+    <groups>
+      <run>
+        <exclude name="mobileworld.Signup"/>
+      </run>
+    </groups>
+   
 	*/
+	
+	
 	
 	
 	
