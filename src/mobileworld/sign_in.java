@@ -1,71 +1,52 @@
 package mobileworld;
 
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-import org.testng.annotations.Test;
-
-public class sign_in {
-@Test
-
-	public void sin1() throws InterruptedException {
-		// TODO Auto-generated method stub
-		System.setProperty("webdriver.chrome.driver", "C:/Users/karthikeyan.s/Downloads/chromedriver_win32/chromedriver.exe");
-		WebDriver driver =  new ChromeDriver();
-		Landingpage landingpage = new Landingpage(driver);
-		landingpage.goTo();
-		landingpage.loginApplication("karthik", "karthik123");
-		driver.findElement(By.xpath("//a[@type='submit']")).click();
-		
-		
-
-	}
-
-@Test(testName = "1")
-//max 20 characters in username textfeild and max 10 characters in password testfeild
-public void sin2() throws InterruptedException {
-	// TODO Auto-generated method stub
-	System.setProperty("webdriver.chrome.driver", "C:/Users/karthikeyan.s/Downloads/chromedriver_win32/chromedriver.exe");
-	WebDriver driver =  new ChromeDriver();
-	Landingpage landingpage = new Landingpage(driver);
-	landingpage.goTo();
-	landingpage.loginApplication("karthikeyankarthikeyankarthikeyan", "karthikeyan123");
-	driver.findElement(By.xpath("//a[@type='submit']")).click();
-	
-
+public class Signinpom {
+    
+    WebDriver driver;
+    public Signinpom(WebDriver driver)
+    {
+        this.driver=driver;
+        PageFactory.initElements(driver, this);
+    }
+    
+    @FindBy(xpath="//button[.='SIGN IN']")
+    WebElement sign;
+    @FindBy(xpath="//input[@id='username']")
+    WebElement username;
+    @FindBy(xpath="//input[@id='password']")
+    WebElement password;
+    @FindBy(xpath="//a[.='Log In']")
+    WebElement logbutton;
+    
+   @FindBy(xpath="//label[@for='remember-me']")
+   WebElement Remember_click;
+    
+    public void goTo()
+    {
+        driver.get("https://qualicoach.org/mwapp/index.html");
+    }
+    
+    
+    public WebElement signinbutton()
+    {
+        return sign;
+    }
+    public WebElement uname()
+    {
+        return username;
+    }
+    public  WebElement pwd()
+    {
+        return password;
+    }
+    public WebElement loginbutton()
+    {
+        return logbutton;
+    }
+   
 }
-
-@Test
-//less than 3 characters in username textfeild and less than 3 characters in password testfeild
-public void sin3() throws InterruptedException {
-	// TODO Auto-generated method stub
-	System.setProperty("webdriver.chrome.driver", "C:/Users/karthikeyan.s/Downloads/chromedriver_win32/chromedriver.exe");
-	WebDriver driver =  new ChromeDriver();
-	Landingpage landingpage = new Landingpage(driver);
-	landingpage.goTo();
-	landingpage.loginApplication("ka", "k1");
-	driver.findElement(By.xpath("//a[@type='submit']")).click();
-
-
-}
-@Test
-//without data
-public void sin4() throws InterruptedException {
-	// TODO Auto-generated method stub
-	System.setProperty("webdriver.chrome.driver", "C:/Users/karthikeyan.s/Downloads/chromedriver_win32/chromedriver.exe");
-	WebDriver driver =  new ChromeDriver();
-	Landingpage landingpage = new Landingpage(driver);
-	landingpage.goTo();
-	landingpage.loginApplication(" ", " ");
-	driver.findElement(By.xpath("//a[@type='submit']")).click();
-	
-
-}
-
-	
-			
-	
-}
-
