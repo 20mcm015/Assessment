@@ -2,10 +2,17 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite thread-count="2" name="Test Suite" >
   <test thread-count="2" name="TestCase" >
+	<groups>
+      <run>
+        <exclude name="mobileworld.Sign_inScript"/>
+      </run>
+    </groups>
     <classes>
       <class name="mobileworld.Signup"/>
-      <class name="mobileworld.Signin"/>
-      <class name="mobileworld.Allmobiles"/>    
+      <class name="mobileworld.Sign_inScript"/>
+      <class name="mobileworld.Allmobiles"/>
+      
+      
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
