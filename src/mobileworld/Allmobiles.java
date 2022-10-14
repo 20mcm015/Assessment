@@ -1,4 +1,5 @@
 
+
 package mobileworld;
 
 import java.util.List;
@@ -22,7 +23,7 @@ WebDriver driver;
 @Test(priority = 1)
 public void launchBrowser() throws InterruptedException {
 driver = new ChromeDriver();
-driver.get(" https://mobileworld.banyanpro.com/");
+driver.get("https://qualicoach.org/mwapp/index.html");
 driver.manage().window().maximize();
 Thread.sleep(3000);
 }
@@ -73,16 +74,10 @@ public void wrongApple() throws InterruptedException {
 
 
 
-//@Test(priority = 6)
-//public void wrongSamsung() {
-    //driver.findElement(By.id("myInput")).sendKeys("Samsung");
-    // We cannot assert statement here because no error message is displayed
-    //driver.findElement(By.id("myInput")).clear();
-//}
 
 
 
-@Test(priority = 7)
+@Test(priority = 6)
 public void twoCharacter() throws InterruptedException {
     driver.findElement(By.id("myInput")).sendKeys("Sa");Thread.sleep(3000);
     String mobName = driver.findElement(By.xpath("//th[text()='Mobile Name']/../../../tbody/tr/td")).getText();
@@ -90,23 +85,18 @@ public void twoCharacter() throws InterruptedException {
     driver.findElement(By.id("myInput")).clear();
     Thread.sleep(3000);
     }
-//@Test(priority = 8)
-//public void InvalidMob() {
-    //driver.findElement(By.id("myInput")).sendKeys("Man");
-    // We cannot assert statement here because no error message is displayed
-    //driver.findElement(By.id("myInput")).clear();
-    //}
 
 
 
-@Test(priority = 9)
+
+@Test(priority = 7)
 public void order() throws InterruptedException {
     driver.findElement(By.id("myInput")).sendKeys("Samsung Galaxy S21");
     Thread.sleep(3000);
-    //Thread.sleep(2000);
+  
     driver.findElement(By.xpath("//tbody/tr[1]/td[5]/a[1]")).click();
     Thread.sleep(3000);
-    // We cannot assert statement here because same page is opening again
+    // We can't assert statement here because same page is opening again
 }
 
 
@@ -115,4 +105,6 @@ public void order() throws InterruptedException {
 
 
 }
+
+
 
